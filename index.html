@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuguyu - The Nutrition OS for Gyms</title>
+    <title>yuguyu</title>
     
+    <!-- Pageclip CSS -->
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -462,7 +465,7 @@
         </div>
     </section>
 
-    <!-- CONTACT / PILOT CTA -->
+    <!-- CONTACT / PILOT CTA (PAGECLIP ENABLED) -->
     <section id="contact" class="py-24 border-t border-white/10 bg-gradient-to-b from-slate-900 to-slate-950">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="glass-panel rounded-[3rem] p-8 md:p-16 text-center border-yellow-400/20 shadow-2xl relative overflow-hidden fade-in-section">
@@ -492,17 +495,21 @@
                             </div>
                             <div>
                                 <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Call Us</p>
-                                <p class="text-xl font-bold">8073994028</p>
+                                <p class="text-xl font-bold">(555) 123-4567</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Simple Form -->
-                    <form action="#" class="space-y-4">
-                        <input type="text" placeholder="Gym / Facility Name" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
-                        <input type="email" placeholder="Email Address" class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
-                        <button class="w-full bg-yellow-400 text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20 btn-hover">
-                            Request Partner Deck
+                    <!-- Pageclip Form -->
+                    <form action="https://send.pageclip.co/RFky35EWt9pUKpPolnJlJ92QXnAVepEK/Contact_Us-from" class="pageclip-form space-y-4" method="post">
+                        <!-- Inputs -->
+                        <input type="text" name="name" placeholder="Full Name" required class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
+                        <input type="text" name="gym" placeholder="Gym / Facility Name" required class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
+                        <input type="email" name="email" placeholder="Email Address" required class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
+                        
+                        <!-- Pageclip Submit Button -->
+                        <button type="submit" class="pageclip-form__submit w-full bg-yellow-400 text-slate-900 font-bold text-lg py-4 rounded-xl hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20 btn-hover">
+                            <span>Request Partner Deck</span>
                         </button>
                     </form>
                 </div>
@@ -583,6 +590,7 @@
     </footer>
 
     <!-- SCRIPTS -->
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
     <script>
         lucide.createIcons();
 
