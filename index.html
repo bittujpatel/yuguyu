@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yuguyu</title>
+    <title>Yuguyu - The Nutrition OS for Gyms</title>
     
     <!-- Pageclip CSS -->
     <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
@@ -54,12 +54,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* PREMIUM ANIMATION UTILITIES */
-        .premium-transition {
-            transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-            transition-duration: 0.5s;
         }
 
         /* DEVICE MOCKUP FRAME */
@@ -165,12 +159,18 @@
             </div>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#showcase" class="hover:text-yellow-400 transition-colors duration-300">The App</a>
                 <a href="#features" class="hover:text-yellow-400 transition-colors duration-300">Features</a>
-                <a href="#model" class="hover:text-yellow-400 transition-colors duration-300">Partnership Model</a>
+                <a href="#model" class="hover:text-yellow-400 transition-colors duration-300">How it Works</a>
                 <a href="#faqs" class="hover:text-yellow-400 transition-colors duration-300">FAQs</a>
-                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="px-5 py-2.5 bg-white/10 hover:bg-yellow-400 hover:text-slate-900 border border-white/20 hover:border-yellow-400 rounded-full transition-all duration-300 backdrop-blur-sm btn-hover shadow-none hover:shadow-none">
-                    Contact Us
+                
+                <!-- Member Login Button (Secondary) -->
+                <a href="#" target="_blank" class="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 rounded-full transition-all duration-300 backdrop-blur-sm flex items-center gap-2">
+                    <i data-lucide="user" class="w-4 h-4"></i> Member Login
+                </a>
+
+                <!-- Partner CTA (Primary) -->
+                <button onclick="scrollToContact()" class="px-5 py-2.5 bg-yellow-400 text-slate-900 font-bold rounded-full hover:bg-yellow-300 transition-all shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] btn-hover">
+                    Become a Partner
                 </button>
             </div>
 
@@ -180,10 +180,10 @@
         </div>
         
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-b border-white/10 p-6 flex-col gap-4 shadow-2xl transition-all duration-300">
-            <a href="#showcase" class="block text-lg py-2 border-b border-white/5" onclick="closeMenu()">The App</a>
             <a href="#features" class="block text-lg py-2 border-b border-white/5" onclick="closeMenu()">Features</a>
-            <a href="#model" class="block text-lg py-2 border-b border-white/5" onclick="closeMenu()">Partnership Model</a>
-            <a href="#contact" class="block w-full py-3 bg-yellow-400 text-slate-900 font-bold rounded-lg mt-2 text-center" onclick="closeMenu()">Contact Us</a>
+            <a href="#model" class="block text-lg py-2 border-b border-white/5" onclick="closeMenu()">How it Works</a>
+            <a href="#" target="_blank" class="block text-lg py-2 border-b border-white/5 text-slate-300 flex items-center gap-2"><i data-lucide="user" class="w-4 h-4"></i> Member Login</a>
+            <a href="#contact" class="block w-full py-3 bg-yellow-400 text-slate-900 font-bold rounded-lg mt-2 text-center" onclick="closeMenu()">Become a Partner</a>
         </div>
     </nav>
 
@@ -204,11 +204,11 @@
                     </h1>
                     
                     <p class="text-lg text-slate-400 leading-relaxed max-w-xl">
-                        Yuguyu is the strategic nutrition layer for elite facilities. Like enterprise-grade software solutions, we partner with your gym to provide access to tech that unlocks professional tracking, trainer oversight, and retention-driving results.
+                        Yuguyu is the strategic nutrition layer for elite facilities. We partner with your gym to provide access to tech that unlocks professional tracking, trainer oversight, and retention-driving results.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button onclick="window.location.href='#contact'" class="px-8 py-4 bg-yellow-400 text-slate-900 font-bold rounded-2xl hover:bg-yellow-300 transition-all shadow-[0_0_40px_-10px_rgba(250,204,21,0.5)] btn-hover flex items-center justify-center gap-2 group">
+                        <button onclick="scrollToContact()" class="px-8 py-4 bg-yellow-400 text-slate-900 font-bold rounded-2xl hover:bg-yellow-300 transition-all shadow-[0_0_40px_-10px_rgba(250,204,21,0.5)] btn-hover flex items-center justify-center gap-2 group">
                             Become a Partner
                             <i data-lucide="chevron-right" class="group-hover:translate-x-1 transition-transform w-5 h-5 duration-300"></i>
                         </button>
@@ -241,44 +241,41 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: INTERFACE SHOWCASE (Balanced Grid) -->
-    <section id="showcase" class="py-24 bg-slate-900 relative">
+    <!-- FEATURES SECTION (Complete App Overview) -->
+    <section id="features" class="py-24 bg-slate-900 relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 max-w-3xl mx-auto fade-in-section">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">The Yuguyu <span class="text-yellow-400">Ecosystem</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Complete <span class="text-yellow-400">Fitness Intelligence</span></h2>
                 <p class="text-slate-400 text-lg">
-                    Built for member results. Controlled by you.
+                    A comprehensive ecosystem combining elite nutrition, workout science, and progress analytics.
                 </p>
             </div>
 
-            <!-- Balanced 2-Column Grid -->
-            <div class="grid md:grid-cols-2 gap-8">
+            <!-- Balanced Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Card 1: Easy Logging -->
+                <!-- Card 1: Macro Tracking -->
                 <div class="fade-in-section glass-panel rounded-3xl p-8 flex flex-col items-center text-center group cursor-default">
                     <div class="mb-6 p-4 bg-yellow-400/10 rounded-full text-yellow-400 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="smartphone" class="w-8 h-8"></i>
+                        <i data-lucide="utensils" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Elite Macro Tracking</h3>
-                    <p class="text-slate-400 text-sm mb-8">A massive, verified food database without the clutter. Mood tracking, water intake, meal templates, and data driven logging make tracking effortless.</p>
-                    
+                    <h3 class="text-xl font-bold mb-2">Elite Nutrition</h3>
+                    <p class="text-slate-400 text-sm mb-8">Verified food database with barcode scanning. Track macros, hydration, and adherence with precision.</p>
                     <div class="device-frame w-48 shadow-2xl mt-auto">
                         <img src="2.png" alt="Logging" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <!-- Card 2: Workout Tracking (NEW) -->
+                <!-- Card 2: Workout Tracking -->
                 <div class="fade-in-section glass-panel rounded-3xl p-8 flex flex-col items-center text-center group cursor-default" style="transition-delay: 150ms">
                     <div class="mb-6 p-4 bg-red-500/10 rounded-full text-red-400 group-hover:scale-110 transition-transform duration-500">
                         <i data-lucide="dumbbell" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Smart Workout Builder</h3>
+                    <h3 class="text-xl font-bold mb-2">Workout Logistics</h3>
                     <p class="text-slate-400 text-sm mb-8">
-                        Build routines from our massive library or create custom sets. Track progressive overload seamlessly.
+                        Access library of 500+ exercises (Incline Press, Flys). Log sets, reps, and RPE to ensure progressive overload.
                     </p>
-                    
                     <div class="device-frame w-48 shadow-2xl mt-auto">
-                        <!-- Placeholder for your workout screenshot -->
                         <img src="3.png" alt="Workout Tracking" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -286,27 +283,44 @@
                 <!-- Card 3: Visual Analytics -->
                 <div class="fade-in-section glass-panel rounded-3xl p-8 flex flex-col items-center text-center group cursor-default" style="transition-delay: 300ms">
                     <div class="mb-6 p-4 bg-blue-500/10 rounded-full text-blue-400 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="shield" class="w-8 h-8"></i>
+                        <i data-lucide="bar-chart-2" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Your Gym App</h3>
-                    <p class="text-slate-400 text-sm mb-8">Our app analyzes weight trends vs. intake. To the member, this isn't just access to Yuguyu—it's <span class="text-white italic">Your Gym's App</span>.</p>
-                    
+                    <h3 class="text-xl font-bold mb-2">Deep Reporting</h3>
+                    <p class="text-slate-400 text-sm mb-8">Visualize calories burnt and muscle strain heatmaps. See weekly trends at a glance.</p>
                     <div class="device-frame w-48 shadow-2xl mt-auto">
                         <img src="4.png" alt="Analytics" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <!-- Card 4: Profile/Goal Setting -->
-                <div class="fade-in-section glass-panel rounded-3xl p-8 flex flex-col items-center text-center group cursor-default" style="transition-delay: 450ms">
+                <!-- Card 4: Progress Tracking -->
+                <div class="fade-in-section glass-panel rounded-3xl p-8 flex flex-col items-center text-center group cursor-default" style="transition-delay: 100ms">
                     <div class="mb-6 p-4 bg-green-500/10 rounded-full text-green-400 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="trending-up" class="w-8 h-8"></i>
+                        <i data-lucide="calendar-check" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Easy Tracking</h3>
-                    <p class="text-slate-400 text-sm mb-8">Users track their nutrition habits, build long term habits, learn about their progress and engage more with fitness physically, mentally, and emotionally.</p>
-                    
+                    <h3 class="text-xl font-bold mb-2">Daily Progress</h3>
+                    <p class="text-slate-400 text-sm mb-8">Calendar view for workout consistency. Photo log for body composition tracking over time.</p>
                     <div class="device-frame w-48 shadow-2xl mt-auto">
                         <img src="5.png" alt="Profile" class="w-full h-full object-cover">
                     </div>
+                </div>
+
+                <!-- Card 5: Co-Branding -->
+                <div class="fade-in-section glass-panel rounded-3xl p-8 md:col-span-2 flex flex-col justify-center text-left group cursor-default relative overflow-hidden" style="transition-delay: 200ms">
+                    <div class="relative z-10 max-w-lg">
+                        <div class="mb-6 p-4 bg-purple-500/10 rounded-full text-purple-400 w-fit">
+                            <i data-lucide="shield" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Your Gym's Digital Twin</h3>
+                        <p class="text-slate-400 text-lg mb-6">
+                            When members log in, they see <b>your logo</b> and colors. It's not just a tracker; it's an extension of your facility's premium experience.
+                        </p>
+                        <ul class="space-y-2 text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> No competitor ads</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> Custom challenges</li>
+                        </ul>
+                    </div>
+                    <!-- Decorative Element -->
+                    <div class="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-l from-purple-500/10 to-transparent"></div>
                 </div>
 
             </div>
@@ -350,7 +364,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
                 <h2 class="text-3xl md:text-5xl font-bold mb-6">The <span class="text-yellow-400">Yuguyu X</span> Model</h2>
                 <p class="text-slate-400 text-lg">
-                    We don't sell to individuals. We sell bulk licenses to you. You distribute "Pro" access keys as a premium value-add to your membership tiers.
+                    We don't sell to individuals. We partner with facilities to provide premium access keys as a value-add to membership tiers.
                 </p>
             </div>
 
@@ -361,18 +375,18 @@
                     <div class="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mx-auto mb-6 text-yellow-400 group-hover:scale-110 transition-transform duration-500">
                         <i data-lucide="shopping-cart" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Buy Seats</h4>
-                    <p class="text-slate-400 text-sm">Purchase a bulk license pack (e.g., 100 members) at wholesale B2B rates.</p>
+                    <h4 class="text-xl font-bold text-white mb-2">Onboard</h4>
+                    <p class="text-slate-400 text-sm">Purchase a license pack. We set up your branded instance.</p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="fade-in-section glass-panel p-8 rounded-3xl text-center relative overflow-hidden group" style="transition-delay: 150ms">
                     <div class="absolute top-0 right-0 p-4 opacity-10 font-bold text-9xl text-white leading-none transition-transform duration-700 group-hover:translate-y-2">2</div>
                     <div class="w-16 h-16 rounded-2xl bg-yellow-400 flex items-center justify-center mx-auto mb-6 text-slate-900 group-hover:scale-110 transition-transform duration-500">
-                        <i data-lucide="key" class="w-8 h-8"></i>
+                        <i data-lucide="layout-dashboard" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Generate Codes</h4>
-                    <p class="text-slate-400 text-sm">Create unique 6-digit access codes in your admin dashboard.</p>
+                    <h4 class="text-xl font-bold text-white mb-2">Manage via Portal</h4>
+                    <p class="text-slate-400 text-sm">Grant or revoke access to members directly from your Gym Portal.</p>
                 </div>
 
                 <!-- Step 3 -->
@@ -381,8 +395,8 @@
                     <div class="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mx-auto mb-6 text-green-400 group-hover:scale-110 transition-transform duration-500">
                         <i data-lucide="smartphone" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-2">Yuguyu X YourGym</h4>
-                    <p class="text-slate-400 text-sm">Member logs in. They see "Powered by Yuguyu", but the experience is tailored to your facility.</p>
+                    <h4 class="text-xl font-bold text-white mb-2">Member Unlocks</h4>
+                    <p class="text-slate-400 text-sm">Member downloads app, logs in, and gets the Pro experience instantly.</p>
                 </div>
             </div>
         </div>
@@ -503,7 +517,7 @@
                     <!-- Pageclip Form -->
                     <form action="https://send.pageclip.co/RFky35EWt9pUKpPolnJlJ92QXnAVepEK/Contact_Us-from" class="pageclip-form space-y-4" method="post">
                         <!-- Inputs -->
-                        <input type="text" name="name" placeholder="Full Name" required class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
+                        <input type="text" id="contact-name" name="name" placeholder="Full Name" required class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
                         <input type="text" name="gym" placeholder="Gym / Facility Name" required class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
                         <input type="email" name="email" placeholder="Email Address" required class="w-full bg-slate-900/80 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-yellow-400 focus:outline-none transition-colors">
                         
@@ -636,6 +650,17 @@
 
             answer.classList.toggle('open');
             icon.style.transform = answer.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // Smooth Scroll & Focus to Contact
+        function scrollToContact() {
+            const section = document.getElementById('contact');
+            section.scrollIntoView({ behavior: 'smooth' });
+            
+            // Wait for scroll to finish then focus (approx 800ms)
+            setTimeout(() => {
+                document.getElementById('contact-name').focus();
+            }, 800);
         }
 
         // Fade In Animation (Premium Observer)
